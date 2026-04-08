@@ -1,0 +1,38 @@
+-- Show complete data from database
+SELECT * FROM sales;
+
+-- Show limited data
+SELECT * FROM sales LIMIT 10;
+
+-- Show limited data from specific columns
+SELECT coffee_name FROM sales LIMIT 5;
+
+-- Show distinct data
+SELECT DISTINCT coffee_name FROM sales;
+
+-- Show data count
+SELECT COUNT(*) FROM sales;
+
+-- Show data with specific condition
+SELECT * FROM sales
+WHERE cash_type = 'card';
+
+-- Show data with multiple conditions
+SELECT * FROM sales
+WHERE coffee_name IN ('Espresso', 'Latte');
+
+-- Show data with sorting
+SELECT * FROM sales
+ORDER BY coffee_name, time_of_day, weekday, month_name, monthsort; 
+
+-- Find total revenue generated
+SELECT SUM(money) AS TOTAL FROM sales;
+
+-- Find total sales for each coffee
+SELECT coffee_name, SUM(money) AS total_sales
+FROM sales
+GROUP BY coffee_name
+ORDER BY total_sales DESC;
+
+-- Find average transaction
+SELECT AVG(money) AS avg_transaction FROM sales;

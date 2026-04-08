@@ -3,7 +3,8 @@ from scripts.run_queries import run_queries
 
 if __name__ == "__main__":
     print("Step 1: Loading data...")
-    load_csv_to_postgres()
+    # Execute the function to load data into PostgreSQL database only once. Comment out this line after the first run to avoid duplicate entries.
+    # load_csv_to_postgres()
 
     print("Step 2: Running queries...")
     run_queries()
